@@ -40,7 +40,7 @@ public class ApartamentoController {
         return new ResponseEntity<>(obj,HttpStatus.OK);
     }
     
-    @DeleteMapping(value="/(id)")
+    @DeleteMapping(value="/{id}")
     public ResponseEntity<Apartamento>eliminar(@PathVariable Integer id){
     Apartamento obj= apartamentoService.findById(id);
     if(obj!=null)

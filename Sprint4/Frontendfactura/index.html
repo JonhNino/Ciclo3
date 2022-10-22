@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/alertify.min.css" />
+
+</head>
+
+<body>
+  
+   <!-- header -->
+   <header id="main-header">
+    <div class="row no-gutters">
+        <div >
+            <div class="d-flex flex-column ">
+                <div class="bg-dark text-white ">
+                    <div class="d-flex">
+                        <h2 id="nombre" class="p-3 text-center">
+                            Grupo 3- Seccion Facturas
+                        </h2>
+                    </div>
+                  </div>                    
+            </div>
+        </div>
+    </div>
+</header>
+  <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+    <button id="btnCrear" type="button" class="btn btn-primary">Crear Factura</button>
+
+    <table id="facturas" class="table mt-2 table-bordered table-striped">
+      <thead>
+        <tr class="text-center">
+          <th>ID Pago</th>
+          <th>Referencia Pago</th>
+          <th>Nombre Dueño</th>
+          <th>Email Dueño</th>
+          <th>Estado</th>
+          <th>Fecha de Pago</th>
+          <th>Nombre Apto</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="modalFactura" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Facturas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="payment_id" class="col-form-label">Número Factura :</label>
+              <input id="payment_id" type="number" placeholder="Digite número factura" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite Número Factura')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="payment_reference" class="col-form-label">Referencia Factura :</label>
+              <input id="payment_reference" placeholder="Digite Referencia Factura" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off"
+                oninvalid="setCustomValidity('Digite Referencia factura')" oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="payment_person_name" class="col-form-label">Nombre Dueño :</label>
+              <input id="payment_person_name" placeholder="Digite Nombre Dueño" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Nombre Dueño')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="payment_person_email" class="col-form-label">Email Dueño :</label>
+              <input id="payment_person_email" placeholder="Digite Email Dueño" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Email Dueño')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="payment_status" class="col-form-label">Estado :</label>
+              <input id="payment_status" placeholder="Digite Estado de factura" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Estado de factura')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="created_at" class="col-form-label">Fecha :</label>
+              <input id="created_at" placeholder="Digite Fecha Creacion" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Fecha Creacion')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="apartamento" class="col-form-label">Apartamento:</label>
+              <input id="apartamento" placeholder="Digite # apartamento" type="text" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite # apartamento')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnCerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+   <footer>
+    <section id="footer">
+      <div>
+        <p class="mt-5 text-center">
+          @2022 MisionTic 2022 Ciclo 3 Todos los derechos Reservados
+        </p>
+      </div>
+    </section>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="js/alertify.min.js"></script>
+  <script src="js/facturas.js"></script>
+
+
+</body>
+
+</html>
