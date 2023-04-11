@@ -85,7 +85,6 @@ on(document, 'click', '.btnBorrar', e => {
 
 
 on(document, 'click', '.btnEditar', e => {
-
     const fila = e.target.parentNode.parentNode
     
     idForm = fila.children[0].innerHTML
@@ -103,7 +102,6 @@ on(document, 'click', '.btnEditar', e => {
     payment_status.value = status
     created_at.value = created_at
     apartamento.value = idapartamento
-
 
     opcion = 'editar'
     modalFacturas.show()
